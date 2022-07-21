@@ -18,13 +18,18 @@ Terraform is the IaC tool for this guide(knowledge of terraform is a prerequisit
 
 8. Run `terraform init` to initialize the folder, `terraform plan` to see what resources would be created. 18 resources would be created in building this cluster. `terraform apply` to create the resources. It would take some 8-10 min for the cluster to be built and ready to go. ![Init](https://community.ops.io/remoteimages/uploads/articles/lulygg1oqgm9u5e2adyb.png) ![apply](https://community.ops.io/remoteimages/uploads/articles/me109xs1918sqfwnlqgs.png)
 
-9. Now the cluster is built, you have to update the --kubeconfig with the awscli command  ```
+9. Now the cluster is built, you have to update the --kubeconfig with the awscli command 
+```
 aws eks --region <region> update-kubeconfig --name <cluster-name>
-``` ![kubeconfig](https://community.ops.io/remoteimages/uploads/articles/6ggtgd8gvkur9bjdgkxg.png) 
+```
+![kubeconfig](https://community.ops.io/remoteimages/uploads/articles/6ggtgd8gvkur9bjdgkxg.png) 
 
-10. Test that everything works by running a `kubectl` command(any kubectl command) to show the nodes in your cluster ```
+10. Test that everything works by running a `kubectl` command(any kubectl command) to show the nodes in your cluster
+
+```
 kubectl get nodes -o wide
-```  ![get-nodes](https://community.ops.io/remoteimages/uploads/articles/zyi3o3beuthmis97w6ns.png)
+``` 
+ ![get-nodes](https://community.ops.io/remoteimages/uploads/articles/zyi3o3beuthmis97w6ns.png)
 
 
 
