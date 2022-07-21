@@ -1,0 +1,44 @@
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: nginx-pod
+#   labels:
+#     app: nginx-pod
+# spec:
+#   containers:
+#   - name: nginx
+#     image: nginx:latest
+#     ports:
+#     - containerPort: 80
+#       protocol: TCP
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    tier: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        tier: frontend
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: nginx-volume
+          mountPath: /usr/share/nginx/
+      volumes:
+      - name: nginx-volume
+        # This AWS EBS volume must already exist.
+        awsElasticBlockStore:
+          volumeID: "vol-07174cf28d3fb98ef"
+          fsType: ext4
