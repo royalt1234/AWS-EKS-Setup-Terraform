@@ -1,6 +1,6 @@
 Quite recently, I was tasked with creating a production ready Kubernetes cluster from the ground up at [Darey.io](https://www.darey.io/) where I Learn DevOps via a Project Based Learning model. This task gave me a deep and practical insight into the technical structure and setup of Kubernetes. Though it took me a while, I was able to set it up as requested and as per documentation. 
 
-Moving forward with the knowledge gained, I decided to set up an AWS EKS Cluster which I would use for some application deployments. This next tasks would center around deployments and persisting data in k8s. However, this article is only a guide to provisioning your own [AWS EKS Cluster](https://docs.aws.amazon.com/eks/latest/userguide/clusters.html) using IaC(Terraform). It is advisable to do this first with the console if you don't already have knowledge as to how it all works. 
+Moving forward with the added knowledge, I decided to set up an AWS EKS Cluster which I would use for some application deployments. This next tasks would center around deployments and persisting data in k8s. However, this article is only a guide to provisioning your own [AWS EKS Cluster](https://docs.aws.amazon.com/eks/latest/userguide/clusters.html) using IaC(Terraform). It is advisable to do this first with the console if you don't already have knowledge as to how it all works. 
 
 Terraform is the IaC tool for this guide(knowledge of terraform is a prerequisite for this process), below are the steps to follow in setting up your EKS Cluster using terraform on your control machine;
 
